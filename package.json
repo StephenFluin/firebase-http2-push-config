@@ -1,0 +1,19 @@
+{
+  "name": "firebase-http2-push-config",
+  "version": "0.0.1",
+  "description": "Read your dist folder, update your firebase config",
+  "main": "generate-http2-push.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephenFluin/firebase-http2-push-config.git"
+  },
+  "author": "Stephen Fluin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StephenFluin/firebase-http2-push-config/issues"
+  },
+  "homepage": "https://github.com/StephenFluin/firebase-http2-push-config#readme"
+}
