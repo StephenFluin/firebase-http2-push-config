@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 fs = require('fs');
 
 fs.readdir('dist/', (err, files) => {
