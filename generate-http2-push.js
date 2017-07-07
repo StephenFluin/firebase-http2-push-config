@@ -36,7 +36,6 @@ fs.readdir('dist/', (err, files) => {
         result += `</${file}>;rel=preload;as=${type},`
     }
     updateWith(result);
-    //console.log(result);
 })
 
 function updateWith(result) {
@@ -44,7 +43,8 @@ function updateWith(result) {
         if(err) {
             return console.log(err);
         }
-        let re = /(\w*"headers": \[{"key": "Link", "value": ")(.*)("}\])/g;
+        let re = /("headers":\s*\[\s*{\s*"key":\s*"Link",\s*"value":\s*")(.*)("\s*}\s*\])/gm;
+
         if(re.exec(data)) {
             let newConfig = data.replace(re , `$1${result}$3`);
             fs.writeFile('firebase.json', newConfig, 'utf8', function(err) {
