@@ -10,6 +10,18 @@ fs.readdir('dist/', (err, files) => {
         if(file.indexOf('.gz') != -1) {
             return false;
         }
+        if(file.indexOf('.map') != -1) {
+            return false;
+        }
+        if(file.indexOf('3rdpartylicenses.txt') != -1) {
+            return false;
+        }
+        if(file.indexOf('ngsw-manifest.json') != -1) {
+            return false;
+        }
+        if(file.indexOf('worker-basic.min.js') != -1) {
+            return false;
+        }
         if(file.indexOf('favicon') != -1) {
             return false
         }
