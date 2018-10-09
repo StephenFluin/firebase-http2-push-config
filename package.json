@@ -1,6 +1,6 @@
 {
   "name": "firebase-http2-push-config",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Read your dist folder, update your firebase config for Angular",
   "main": "generate-http2-push.js",
   "bin" : { "gfp" : "./generate-http2-push.js" },

@@ -6,6 +6,8 @@ fs.readdir('dist/', (err, files) => {
         console.log('No dist folder found to write to.');
         return;
     }
+
+    // Let's push any file not in this list
     const indexMatches = [
         '.gz',
         '.map',
@@ -17,6 +19,7 @@ fs.readdir('dist/', (err, files) => {
         'favicon',
         'index.html',
     ];
+    // Filter through found files
     files = files.filter(file => {
         for (const path of indexMatches) {
             if (file.indexOf(path) != -1) {
@@ -32,6 +35,9 @@ fs.readdir('dist/', (err, files) => {
             return false;
         }
     });
+
+    // Generate the string in firebase.json format
+    console.log('found',files,'for pushing');
     let result = '';
     for (let file of files) {
         let type;
@@ -45,6 +51,7 @@ fs.readdir('dist/', (err, files) => {
     updateWith(result);
 });
 
+// Write the changes into the firebase.json file
 function updateWith(result) {
     fs.readFile('firebase.json', 'utf8', function(err, data) {
         if (err) {
